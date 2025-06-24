@@ -29,3 +29,17 @@ const question = [
         answer: "Australia"
     }
 ];
+
+let currentQuestion = 0;
+let score = 0;
+let timeLeft = 30;
+let timer;
+
+const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
+const nextBtn = document.getElementById("next-btn");
+const timerElement = document.getElementById("time");
+const quizBox = document.getElementById("quiz-box");
+const resultBox = document.getElementById("result");
+const scoreElement = document.getElementById("score");
+
