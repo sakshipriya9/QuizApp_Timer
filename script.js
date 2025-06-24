@@ -43,3 +43,20 @@ const quizBox = document.getElementById("quiz-box");
 const resultBox = document.getElementById("result");
 const scoreElement = document.getElementById("score");
 
+function startQuiz(){
+    showQuestion();
+    timer = setInterval(updateTimer, 1000);
+}
+
+function showQuestion(){
+    const q = question[currentQuestion];
+    questionElement.textContent = q.question;
+    optionsElement.innerHTML = "";
+
+    q.options.forEach(option => {
+        const li = document.createElement("li");
+        li.textContent = option;
+        li.onclick = () => selectAnswer(li, q.answer);
+        optionsElement.appendChild(li);
+    });
+}
