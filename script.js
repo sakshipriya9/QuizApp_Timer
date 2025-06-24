@@ -60,3 +60,15 @@ function showQuestion(){
         optionsElement.appendChild(li);
     });
 }
+
+function selectAnswer(selected, correctAnswer){
+    const allOptions = optionsElement.querySelectorAll("li");
+    allOptions.forEach(option => option.style.pointerEvents = "none");
+
+    if(selected.textContent === correctAnswer){
+        selected.style.backgroundColor = "#4CAF50";
+        score++;
+    }else{
+        selected.style.backgroundColor = "#f44336";
+    }
+}
